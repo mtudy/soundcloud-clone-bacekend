@@ -2,7 +2,7 @@ package io.mtudy.soundcloud.endpoint.music;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
-import io.mtudy.soundcloud.music.application.requests.CreateMusicRequest;
+import io.mtudy.soundcloud.music.application.inputs.CreateMusicInput;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -28,7 +28,7 @@ public class CreateMusicControllerTest {
                     MockMvcRequestBuilders
                         .post("/musics")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(mapper.writeValueAsString(new CreateMusicRequest(new Faker().name().fullName())))
+                        .content(mapper.writeValueAsString(new CreateMusicInput(new Faker().name().fullName())))
                 )
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
