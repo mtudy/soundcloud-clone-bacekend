@@ -1,4 +1,4 @@
-package io.mtudy.soundcloud.music.interfaces.web.controllers;
+package io.mtudy.soundcloud.music.application.interfaces.web.controllers;
 
 import io.mtudy.soundcloud.music.application.inputs.CreateMusicInput;
 import io.mtudy.soundcloud.music.application.services.CreateMusicService;

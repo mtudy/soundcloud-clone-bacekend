@@ -1,4 +1,4 @@
-package io.mtudy.soundcloud.music.interfaces.web.graphql;
+package io.mtudy.soundcloud.music.application.interfaces.web.graphql;
 
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import io.mtudy.soundcloud.music.application.services.FindMusicByIdService;

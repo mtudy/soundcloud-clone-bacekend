@@ -1,4 +1,4 @@
-package io.mtudy.soundcloud.music.interfaces.web.graphql;
+package io.mtudy.soundcloud.music.application.interfaces.web.graphql;
 
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import io.mtudy.soundcloud.music.application.inputs.CreateMusicInput;
