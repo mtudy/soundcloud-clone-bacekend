@@ -1,0 +1,20 @@
+schema {
+    query: Query
+}
+
+type Query {
+    music(id: ID!) : Music
+}
+
+type Music {
+    id : ID!
+    title : String!
+}
+
+type Mutation {
+    createMusic(input: CreateMusicInput!): Music
+}
+
+input CreateMusicInput {
+   title: String!
+}

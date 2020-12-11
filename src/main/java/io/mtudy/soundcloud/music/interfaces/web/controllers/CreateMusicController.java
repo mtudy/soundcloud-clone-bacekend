@@ -1,6 +1,6 @@
 package io.mtudy.soundcloud.music.interfaces.web.controllers;
 
-import io.mtudy.soundcloud.music.application.requests.CreateMusicRequest;
+import io.mtudy.soundcloud.music.application.inputs.CreateMusicInput;
 import io.mtudy.soundcloud.music.application.services.CreateMusicService;
 import io.mtudy.soundcloud.music.domain.entities.Music;
 import org.springframework.http.MediaType;
@@ -21,7 +21,7 @@ public class CreateMusicController {
         consumes = MediaType.APPLICATION_JSON_VALUE,
         produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Music run(@RequestBody CreateMusicRequest request) {
+    public Music run(@RequestBody CreateMusicInput request) {
         return this.service.run(request);
     }
 }
