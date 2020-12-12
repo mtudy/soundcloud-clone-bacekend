@@ -21,14 +21,17 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - uses: actions/checkout@v2
         with:
           repository: mtudy/soundcloud-clone-environment
           token: ${{ secrets.BUILD_KEY }}
 
+      - uses: actions/checkout@v2
+
+      - run: pwd
+
       - run: ls -al
 
-      - run: cp -a soundcloud-clone-environment/backend/. src/main/resources/
+      - run: cp -a backend/. ../src/main/resources/
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
