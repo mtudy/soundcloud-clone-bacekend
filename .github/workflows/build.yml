@@ -13,11 +13,11 @@ jobs:
     services:
       mariadb:
         image: mariadb:10.5.8-focal
-#        env:
-#          MYSQL_ROOT_PASSWORD: ${{ job.services.mariadb.root_password }}
-#          MYSQL_DATABASE: ${{ job.services.mariadb.database }}
-#          MYSQL_USER: ${{ job.services.mariadb.user }}
-#          MYSQL_PASSWORD: ${{ job.services.mariadb.password }}
+        env:
+          MYSQL_ROOT_PASSWORD: ${{ secrets.MARIADB_ROOT_PASSWORD }}
+          MYSQL_DATABASE: ${{ secrets.MARIADB_DATABASE }}
+          MYSQL_USER: ${{ secrets.MARIADB_USER }}
+          MYSQL_PASSWORD: ${{ secrets.MARIADB_PASSWORD }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
