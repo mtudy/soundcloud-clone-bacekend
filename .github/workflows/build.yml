@@ -24,11 +24,10 @@ jobs:
         with:
           repository: mtudy/soundcloud-clone-environment
           token: ${{ secrets.BUILD_KEY }}
-          path: .environment
 
       - run: ls -al
 
-      - run: cp -a .environment/backend/. $GITHUB_WORKSPACE/src/main/resources/
+      - run: cp -a soundcloud-clone-environment/backend/. src/main/resources/
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
