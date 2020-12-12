@@ -19,19 +19,20 @@ jobs:
 #          MYSQL_USER: ${{ job.services.mariadb.user }}
 #          MYSQL_PASSWORD: ${{ job.services.mariadb.password }}
     steps:
+      - uses: actions/checkout@v2
+
       - name: Check out repository code
         uses: actions/checkout@v2
         with:
           repository: mtudy/soundcloud-clone-environment
           token: ${{ secrets.BUILD_KEY }}
-
-      - uses: actions/checkout@v2
+          path: .environment
 
       - run: pwd
 
       - run: ls -al
 
-      - run: cp -a backend/. ../src/main/resources/
+      - run: cp -a .environment/backend/. ../src/main/resources/
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
