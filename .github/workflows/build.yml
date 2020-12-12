@@ -26,6 +26,7 @@ jobs:
           ssh-key: ${{ secrets.BUILD_KEY }}
           path: .environment
 
+
       - run: cp -a .environment/backend/. src/main/resources/
 
       - run: ls -al
