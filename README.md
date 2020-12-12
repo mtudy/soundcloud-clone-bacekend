@@ -9,6 +9,6 @@
 ## Getting Started
 ```bash
 cp docker/.env.example docker/.env
-cp resource/example.application.properties resource/application.properties
+cp src/main/resources/example.application.properties src/main/resources/application.properties
 make start
 ```
