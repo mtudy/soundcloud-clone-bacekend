@@ -10,9 +10,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: cherryred5959/soundcloud-clone-backend:latest
+    services:
+      mariadb:
+        image: mariadb:10.5.8-focal
+#        env:
+#          MYSQL_ROOT_PASSWORD: ${{ job.services.mariadb.root_password }}
+#          MYSQL_DATABASE: ${{ job.services.mariadb.database }}
+#          MYSQL_USER: ${{ job.services.mariadb.user }}
+#          MYSQL_PASSWORD: ${{ job.services.mariadb.password }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+        with:
+          repository: mtudy/soundcloud-clone-environment
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: .environment
+        run: cp -a .environment/backend/. src/main/resources/
+
+      - run: ls -al
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
