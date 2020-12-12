@@ -23,9 +23,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: mtudy/soundcloud-clone-environment
-          ssh-key: ${{ secrets.BUILD_KEY }}
+          token: ${{ secrets.BUILD_KEY }}
           path: .environment
-
 
       - run: cp -a .environment/backend/. src/main/resources/
 
