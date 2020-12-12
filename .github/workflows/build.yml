@@ -29,7 +29,8 @@ jobs:
           token: ${{ secrets.BUILD_KEY }}
           path: .environment
 
-      - run: cp -a .environment/backend/application-default.properties src/test/resources/
+      - name: Inject environment file
+        run: cp -a .environment/backend/application-default.properties src/test/resources/
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
