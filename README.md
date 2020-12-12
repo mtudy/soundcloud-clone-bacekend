@@ -8,5 +8,7 @@
 
 ## Getting Started
 ```bash
+cp docker/.env.example docker/.env
+cp resource/example.application.properties resource/application.properties
 make start
 ```
