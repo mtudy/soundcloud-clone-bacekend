@@ -21,6 +21,7 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           repository: mtudy/soundcloud-clone-environment
           token: ${{ secrets.BUILD_KEY }}
