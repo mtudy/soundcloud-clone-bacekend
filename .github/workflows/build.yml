@@ -25,7 +25,8 @@ jobs:
           repository: mtudy/soundcloud-clone-environment
           token: ${{ secrets.GITHUB_TOKEN }}
           path: .environment
-        run: cp -a .environment/backend/. src/main/resources/
+
+      - run: cp -a .environment/backend/. src/main/resources/
 
       - run: ls -al
 
