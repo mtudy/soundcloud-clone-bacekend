@@ -10,5 +10,6 @@
 ```bash
 cp docker/.env.example docker/.env
 cp src/main/resources/example.application.properties src/main/resources/application.properties
+mkdir -p src/resources/db/migration
 make start
 ```
