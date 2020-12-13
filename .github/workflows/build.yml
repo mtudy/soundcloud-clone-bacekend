@@ -32,19 +32,17 @@ jobs:
       - name: Inject environment file
         run: cp -a .environment/backend/application-default.properties src/test/resources/
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
       - name: Run Gradle wrapper
         run: gradle wrapper
 
       - name: Testing with Gradle
-        run: ./gradlew test
+        run: gradle test
 
       - name: Build with Gradle
-        run: ./gradlew build
+        run: gradle build
 
   slack:
+    if: always()
     runs-on: ubuntu-latest
     steps:
       - uses: 8398a7/action-slack@v3
@@ -53,4 +51,3 @@ jobs:
           fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        if: always()
