@@ -1,4 +1,4 @@
-# SoundCloud CLone Backend
+# SoundCloud Clone Backend
 
 ## Requirements
 * Docker
