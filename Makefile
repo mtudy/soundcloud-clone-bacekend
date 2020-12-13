@@ -1,4 +1,11 @@
+include src/main/resources/application.properties
+export
+
 DOCKER_COMPOSE = cd docker && docker-compose -p soundcloud_clone_backend
+
+.PHONY: flyway
+flyway: ## run flyway, use 's' variable to select a service. make s=flywayInfo flyway
+		./gradlew -Pflyway.url=$(spring.flyway.url) -Pflyway.schemas=$(spring.flyway.schemas) -Pflyway.user=$(spring.flyway.user) -Pflyway.password=$(spring.flyway.password) $(s)
 
 .PHONY: start
 start: erase build up ## clean current environment, recreate dependencies and spin up again
