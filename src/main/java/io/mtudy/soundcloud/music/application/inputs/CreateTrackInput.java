@@ -3,10 +3,10 @@ package io.mtudy.soundcloud.music.application.inputs;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class CreateMusicInput {
+public class CreateTrackInput {
     private String title;
 
-    public CreateMusicInput(String title) {
+    public CreateTrackInput(String title) {
         this.title = title;
     }
 

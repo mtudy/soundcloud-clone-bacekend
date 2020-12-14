@@ -3,18 +3,18 @@ schema {
 }
 
 type Query {
-    music(id: ID!) : Music
+    track(id: ID!) : Track
 }
 
-type Music {
+type Track {
     id : ID!
     title : String!
 }
 
 type Mutation {
-    createMusic(input: CreateMusicInput!): Music
+    createTrack(input: CreateTrackInput!): Track
 }
 
-input CreateMusicInput {
+input CreateTrackInput {
    title: String!
 }

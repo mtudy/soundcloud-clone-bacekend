@@ -9,25 +9,33 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @NoArgsConstructor
-@Entity(name = "music")
-public class Music {
+@Entity(name = "track")
+public class Track {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
     )
+    @Column(length = 36)
     private String id;
 
-    @Column(nullable = false)
+    @Column
+    private String authorId;
+
+    @Column
     private String title;
 
-    public Music(String title) {
+    public Track(String title) {
         this.title = title;
     }
 
     public String getId() {
         return id;
+    }
+
+    public String getAuthorId() {
+        return authorId;
     }
 
     public String getTitle() {
