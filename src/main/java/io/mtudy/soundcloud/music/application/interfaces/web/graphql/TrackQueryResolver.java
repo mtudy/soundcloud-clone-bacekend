@@ -13,7 +13,7 @@ public class TrackQueryResolver implements GraphQLQueryResolver {
         this.service = service;
     }
 
-    public Track music(String id) {
+    public Track track(String id) {
         return this.service.run(id);
     }
 }
