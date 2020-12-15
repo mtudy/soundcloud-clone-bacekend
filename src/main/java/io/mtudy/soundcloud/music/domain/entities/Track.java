@@ -1,23 +1,16 @@
 package io.mtudy.soundcloud.music.domain.entities;
 
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @NoArgsConstructor
 @Entity(name = "track")
 public class Track {
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator"
-    )
-    @Column(length = 36)
+    @Column(columnDefinition = "VARCHAR(36)")
     private String id;
 
     @Column
@@ -26,8 +19,14 @@ public class Track {
     @Column
     private String title;
 
-    public Track(String title) {
+    @Column
+    private String artworkUrl;
+
+    public Track(String id, String authorId, String title, String artworkUrl) {
+        this.id = id;
+        this.authorId = authorId;
         this.title = title;
+        this.artworkUrl = artworkUrl;
     }
 
     public String getId() {
@@ -40,5 +39,9 @@ public class Track {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getArtworkUrl() {
+        return artworkUrl;
     }
 }

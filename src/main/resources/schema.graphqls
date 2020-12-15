@@ -9,6 +9,7 @@ type Query {
 type Track {
     id : ID!
     title : String!
+    artworkUrl: String!
 }
 
 type Mutation {
@@ -16,5 +17,6 @@ type Mutation {
 }
 
 input CreateTrackInput {
-   title: String!
+    title: String!
+    artworkUrl: String!
 }

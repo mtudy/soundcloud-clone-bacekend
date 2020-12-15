@@ -5,6 +5,8 @@ import io.mtudy.soundcloud.music.domain.entities.Track;
 import io.mtudy.soundcloud.music.domain.repotitories.TrackRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class CreateTrackService {
     private final TrackRepository repository;
@@ -14,6 +16,8 @@ public class CreateTrackService {
     }
 
     public Track run(CreateTrackInput request) {
-        return this.repository.save(new Track(request.getTitle()));
+        return this.repository.save(new Track(
+            UUID.randomUUID().toString(), UUID.randomUUID().toString(), request.getTitle(), request.getArtworkUrl()
+        ));
     }
 }

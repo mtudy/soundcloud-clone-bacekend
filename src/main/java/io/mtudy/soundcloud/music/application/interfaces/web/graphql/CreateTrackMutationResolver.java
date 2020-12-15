@@ -6,11 +6,13 @@ import io.mtudy.soundcloud.music.application.services.CreateTrackService;
 import io.mtudy.soundcloud.music.domain.entities.Track;
 import org.springframework.stereotype.Component;
 
+import javax.validation.Valid;
+
 @Component
 public class CreateTrackMutationResolver implements GraphQLMutationResolver {
     private final CreateTrackService service;
 
-    public CreateTrackMutationResolver(CreateTrackService service) {
+    public CreateTrackMutationResolver(@Valid CreateTrackService service) {
         this.service = service;
     }
 
