@@ -13,7 +13,7 @@ public class Track {
     @Column(columnDefinition = "VARCHAR(36)")
     private String id;
 
-    @Column
+    @Column(columnDefinition = "VARCHAR(36)")
     private String authorId;
 
     @Column
