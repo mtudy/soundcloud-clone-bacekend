@@ -12,11 +12,11 @@ import javax.validation.Valid;
 public class CreateTrackMutationResolver implements GraphQLMutationResolver {
     private final CreateTrackService service;
 
-    public CreateTrackMutationResolver(@Valid CreateTrackService service) {
+    public CreateTrackMutationResolver(CreateTrackService service) {
         this.service = service;
     }
 
-    public Track createTrack(CreateTrackInput input) {
+    public Track createTrack(@Valid CreateTrackInput input) {
         return this.service.run(input);
     }
 }
