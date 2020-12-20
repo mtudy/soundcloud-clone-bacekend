@@ -12,11 +12,23 @@ type Track {
     artworkUrl: String!
 }
 
+type Like {
+    id : ID!
+    type : String!
+    typeId: String!
+}
+
 type Mutation {
     createTrack(input: CreateTrackInput!): Track
+    createLike(input: CreateLikeInput!): Like
 }
 
 input CreateTrackInput {
     title: String!
     artworkUrl: String!
+}
+
+input CreateLikeInput {
+    type: String!
+    typeId: String!
 }
