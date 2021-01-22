@@ -6,7 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LikeRepository extends CrudRepository<Like, String> {
-    public default Like findByTrackId(String trackId) {
-        return null;
-    }
 }
