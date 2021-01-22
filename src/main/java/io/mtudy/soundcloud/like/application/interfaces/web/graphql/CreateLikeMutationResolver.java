@@ -1,7 +1,7 @@
 package io.mtudy.soundcloud.like.application.interfaces.web.graphql;
 
 import graphql.kickstart.tools.GraphQLMutationResolver;
-import io.mtudy.soundcloud.like.application.inputs.CreateLikeInput;
+import io.mtudy.soundcloud.like.application.inputs.CreatePlaylistLikeInput;
 import io.mtudy.soundcloud.like.application.services.CreateLikeService;
 import io.mtudy.soundcloud.like.domain.entities.Like;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ public class CreateLikeMutationResolver implements GraphQLMutationResolver {
         this.service = service;
     }
 
-    public Like createLike(@Valid CreateLikeInput input) {
+    public Like createLike(@Valid CreatePlaylistLikeInput input) {
         return this.service.run(input);
     }
 }

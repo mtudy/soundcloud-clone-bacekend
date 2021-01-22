@@ -20,7 +20,7 @@ type Like {
 
 type Mutation {
     createTrack(input: CreateTrackInput!): Track
-    createLike(input: CreateLikeInput!): Like
+    likePlaylist(input: likePlaylistInput!): Like
 }
 
 input CreateTrackInput {
@@ -28,7 +28,6 @@ input CreateTrackInput {
     artworkUrl: String!
 }
 
-input CreateLikeInput {
-    type: String!
-    typeId: String!
+input likePlaylistInput {
+    playlistId: String!
 }

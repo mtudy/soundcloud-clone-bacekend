@@ -1,7 +1,8 @@
 package io.mtudy.soundcloud.like.application.services;
 
-import io.mtudy.soundcloud.like.application.inputs.CreateLikeInput;
+import io.mtudy.soundcloud.like.application.inputs.CreatePlaylistLikeInput;
 import io.mtudy.soundcloud.like.domain.entities.Like;
+import io.mtudy.soundcloud.like.domain.entities.PlaylistLike;
 import io.mtudy.soundcloud.like.domain.repotitories.LikeRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +16,13 @@ public class CreateLikeService {
         this.repository = repository;
     }
 
-    public Like run(CreateLikeInput request) {
-        return this.repository.save(new Like(
+    public Like run(CreatePlaylistLikeInput request) {
+        var builder = new PlaylistLike.Builder(
             UUID.randomUUID().toString(),
-            UUID.randomUUID().toString(),
-            request.getType(),
-            request.getTypeId()
-        ));
+            request.getPlaylistId(),
+            UUID.randomUUID().toString()
+        );
+
+        return this.repository.save(builder.build());
     }
 }
