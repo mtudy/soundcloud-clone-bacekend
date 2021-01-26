@@ -12,15 +12,24 @@ type Track {
     artworkUrl: String!
 }
 
-type Like {
+type PlaylistLike {
     id : ID!
-    type : String!
-    typeId: String!
 }
+
+type AlbumLike {
+    id : ID!
+}
+
+type TrackLike {
+    id : ID!
+}
+
 
 type Mutation {
     createTrack(input: CreateTrackInput!): Track
-    likePlaylist(input: likePlaylistInput!): Like
+    likePlaylist(input: likePlaylistInput!): PlaylistLike
+    likeAlbum(input: likeAlbumInput!): AlbumLike
+    likeTrack(input: likeTrackInput!): TrackLike
 }
 
 input CreateTrackInput {
@@ -30,4 +39,12 @@ input CreateTrackInput {
 
 input likePlaylistInput {
     playlistId: String!
+}
+
+input likeTrackInput {
+    trackId: String!
+}
+
+input likeAlbumInput {
+    albumId: String!
 }

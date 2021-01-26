@@ -5,11 +5,11 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotBlank;
 
 @NoArgsConstructor
-public class CreatePlaylistLikeInput {
+public class LikePlaylistInput {
     @NotBlank
     private String playlistId;
 
-    public CreatePlaylistLikeInput(String playlistId) {
+    public LikePlaylistInput(String playlistId) {
         this.playlistId = playlistId;
     }
 
