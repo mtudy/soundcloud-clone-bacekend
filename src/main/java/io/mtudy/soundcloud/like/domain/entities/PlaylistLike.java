@@ -1,36 +1,41 @@
 package io.mtudy.soundcloud.like.domain.entities;
 
-import io.mtudy.soundcloud.like.domain.enums.LikeType;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.DiscriminatorValue;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @NoArgsConstructor
-@Entity(name = "playlistLike")
-@DiscriminatorValue(LikeType.Values.PLAYLIST)
-public final class PlaylistLike extends Like {
-    private PlaylistLike(Builder builder) {
-        this.id = builder.id;
-        this.typeId = builder.typeId;
-        this.authorId = builder.authorId;
+@Entity
+@Table(name = "playlist_like")
+public class PlaylistLike {
+    @Id
+    @Column(columnDefinition = "VARCHAR(36)")
+    private String id;
+
+    @Column(columnDefinition = "VARCHAR(36)")
+    private String playlistId;
+
+    @Column(columnDefinition = "VARCHAR(36)")
+    private String authorId;
+
+    public PlaylistLike(String id, String playlistId, String authorId) {
+        this.id = id;
+        this.playlistId = playlistId;
+        this.authorId = authorId;
     }
 
-    public final static class Builder {
-        private final String id;
+    public String getId() {
+        return id;
+    }
 
-        private final String typeId;
+    public String getPlaylistId() {
+        return playlistId;
+    }
 
-        private final String authorId;
-
-        public Builder(String id, String typeId, String authorId) {
-            this.id = id;
-            this.typeId = typeId;
-            this.authorId = authorId;
-        }
-
-        public PlaylistLike build() {
-            return new PlaylistLike(this);
-        }
+    public String getAuthorId() {
+        return authorId;
     }
 }

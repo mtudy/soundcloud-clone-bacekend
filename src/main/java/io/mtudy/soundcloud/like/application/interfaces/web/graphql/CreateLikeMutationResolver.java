@@ -3,7 +3,6 @@ package io.mtudy.soundcloud.like.application.interfaces.web.graphql;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import io.mtudy.soundcloud.like.application.inputs.CreatePlaylistLikeInput;
 import io.mtudy.soundcloud.like.application.services.CreateLikeService;
-import io.mtudy.soundcloud.like.domain.entities.Like;
 import org.springframework.stereotype.Component;
 
 import javax.validation.Valid;

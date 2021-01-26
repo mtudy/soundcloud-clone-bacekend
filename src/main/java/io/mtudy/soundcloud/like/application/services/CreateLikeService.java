@@ -1,7 +1,6 @@
 package io.mtudy.soundcloud.like.application.services;
 
 import io.mtudy.soundcloud.like.application.inputs.CreatePlaylistLikeInput;
-import io.mtudy.soundcloud.like.domain.entities.Like;
 import io.mtudy.soundcloud.like.domain.entities.PlaylistLike;
 import io.mtudy.soundcloud.like.domain.repotitories.LikeRepository;
 import org.springframework.stereotype.Service;

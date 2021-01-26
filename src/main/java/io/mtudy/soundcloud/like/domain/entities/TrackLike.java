@@ -1,35 +1,41 @@
 package io.mtudy.soundcloud.like.domain.entities;
 
-import io.mtudy.soundcloud.like.domain.enums.LikeType;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @NoArgsConstructor
-@Entity(name = "trackLike")
-@DiscriminatorValue(LikeType.Values.TRACK)
-public final class TrackLike extends Like {
-    private TrackLike(Builder builder) {
-        this.id = builder.id;
-        this.typeId = builder.typeId;
-        this.authorId = builder.authorId;
+@Entity
+@Table(name = "track_like")
+public class TrackLike {
+    @Id
+    @Column(columnDefinition = "VARCHAR(36)")
+    private String id;
+
+    @Column(columnDefinition = "VARCHAR(36)")
+    private String trackId;
+
+    @Column(columnDefinition = "VARCHAR(36)")
+    private String authorId;
+
+    public TrackLike(String id, String trackId, String authorId) {
+        this.id = id;
+        this.trackId = trackId;
+        this.authorId = authorId;
     }
 
-    public final static class Builder {
-        private final String id;
+    public String getId() {
+        return id;
+    }
 
-        private final String typeId;
+    public String getTrackId() {
+        return trackId;
+    }
 
-        private final String authorId;
-
-        public Builder(String id, String typeId, String authorId) {
-            this.id = id;
-            this.typeId = typeId;
-            this.authorId = authorId;
-        }
-
-        public TrackLike build() {
-            return new TrackLike(this);
-        }
+    public String getAuthorId() {
+        return authorId;
     }
 }
