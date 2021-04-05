@@ -1,0 +1,7 @@
+mutation {
+    createTrack(input: {title: "trackTitle", artworkUrl: "imageUrl"}){
+        id
+        title
+        artworkUrl
+    }
+}
