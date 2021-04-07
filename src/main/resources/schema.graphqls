@@ -12,11 +12,25 @@ type Track {
     artworkUrl: String!
 }
 
+type Playlist {
+    id : ID!
+    title : String!
+    artworkUrl: String
+}
+
 type Mutation {
     createTrack(input: CreateTrackInput!): Track
+    createPlaylist(input: CreatePlaylistInput!): Playlist
 }
 
 input CreateTrackInput {
     title: String!
     artworkUrl: String!
+}
+
+input CreatePlaylistInput {
+    title: String!
+    genre: String!
+    isPrivate: Boolean!
+    trackIds: [String]!
 }
