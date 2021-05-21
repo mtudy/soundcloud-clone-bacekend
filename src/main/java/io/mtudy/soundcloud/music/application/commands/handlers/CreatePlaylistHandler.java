@@ -1,6 +1,6 @@
-package io.mtudy.soundcloud.music.application.services;
+package io.mtudy.soundcloud.music.application.commands.handlers;
 
-import io.mtudy.soundcloud.music.application.inputs.CreatePlaylistInput;
+import io.mtudy.soundcloud.music.application.commands.CreatePlaylistInput;
 import io.mtudy.soundcloud.music.domain.entities.Playlist;
 import io.mtudy.soundcloud.music.domain.repotitories.PlaylistRepository;
 import org.springframework.stereotype.Service;
@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.UUID;
 
 @Service
-public class CreatePlaylistService {
+public class CreatePlaylistHandler {
     private final PlaylistRepository repository;
 
-    public CreatePlaylistService(PlaylistRepository repository) {
+    public CreatePlaylistHandler(PlaylistRepository repository) {
         this.repository = repository;
     }
 

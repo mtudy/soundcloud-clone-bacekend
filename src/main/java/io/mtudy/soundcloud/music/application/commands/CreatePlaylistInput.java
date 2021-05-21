@@ -1,4 +1,4 @@
-package io.mtudy.soundcloud.music.application.inputs;
+package io.mtudy.soundcloud.music.application.commands;
 
 import lombok.NoArgsConstructor;
 

@@ -1,8 +1,8 @@
 package io.mtudy.soundcloud.music.application.interfaces.web.graphql;
 
 import graphql.kickstart.tools.GraphQLMutationResolver;
-import io.mtudy.soundcloud.music.application.inputs.CreatePlaylistInput;
-import io.mtudy.soundcloud.music.application.services.CreatePlaylistService;
+import io.mtudy.soundcloud.music.application.commands.CreatePlaylistInput;
+import io.mtudy.soundcloud.music.application.commands.handlers.CreatePlaylistHandler;
 import io.mtudy.soundcloud.music.domain.entities.Playlist;
 import org.springframework.stereotype.Component;
 
@@ -10,9 +10,9 @@ import javax.validation.Valid;
 
 @Component
 public class CreatePlaylistResolver implements GraphQLMutationResolver {
-    private final CreatePlaylistService service;
+    private final CreatePlaylistHandler service;
 
-    public CreatePlaylistResolver(CreatePlaylistService service) {
+    public CreatePlaylistResolver(CreatePlaylistHandler service) {
         this.service = service;
     }
 
