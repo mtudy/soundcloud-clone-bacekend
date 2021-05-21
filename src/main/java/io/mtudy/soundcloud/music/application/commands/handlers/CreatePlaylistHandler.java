@@ -1,6 +1,6 @@
 package io.mtudy.soundcloud.music.application.commands.handlers;
 
-import io.mtudy.soundcloud.music.application.commands.CreatePlaylistInput;
+import io.mtudy.soundcloud.music.application.commands.CreatePlaylistCommand;
 import io.mtudy.soundcloud.music.domain.entities.Playlist;
 import io.mtudy.soundcloud.music.domain.repotitories.PlaylistRepository;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class CreatePlaylistHandler {
         this.repository = repository;
     }
 
-    public Playlist run(CreatePlaylistInput input) {
+    public Playlist run(CreatePlaylistCommand input) {
         var builder = new Playlist.Builder(
             UUID.randomUUID().toString(),
             input.getTitle(),
