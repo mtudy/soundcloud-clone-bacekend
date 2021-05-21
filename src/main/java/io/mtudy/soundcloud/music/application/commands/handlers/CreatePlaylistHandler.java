@@ -15,7 +15,7 @@ public class CreatePlaylistHandler {
         this.repository = repository;
     }
 
-    public Playlist run(CreatePlaylistCommand input) {
+    public Playlist handle(CreatePlaylistCommand input) {
         return this.repository.save(
             new Playlist.Builder(
                 UUID.randomUUID().toString(),

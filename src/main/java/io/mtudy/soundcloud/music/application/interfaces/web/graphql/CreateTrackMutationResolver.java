@@ -17,6 +17,6 @@ public class CreateTrackMutationResolver implements GraphQLMutationResolver {
     }
 
     public Track createTrack(@Valid CreateTrackCommand input) {
-        return this.service.run(input);
+        return this.service.handle(input);
     }
 }

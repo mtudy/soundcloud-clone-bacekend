@@ -17,6 +17,6 @@ public class CreatePlaylistResolver implements GraphQLMutationResolver {
     }
 
     public Playlist createPlaylist(@Valid CreatePlaylistCommand input) {
-        return this.service.run(input);
+        return this.service.handle(input);
     }
 }

@@ -14,6 +14,6 @@ public class TrackQueryResolver implements GraphQLQueryResolver {
     }
 
     public Track track(String id) {
-        return this.service.run(id);
+        return this.service.handle(id);
     }
 }

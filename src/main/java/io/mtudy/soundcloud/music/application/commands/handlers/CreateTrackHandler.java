@@ -15,7 +15,7 @@ public class CreateTrackHandler {
         this.repository = repository;
     }
 
-    public Track run(CreateTrackCommand request) {
+    public Track handle(CreateTrackCommand request) {
         return this.repository.save(new Track(
             UUID.randomUUID().toString(), UUID.randomUUID().toString(), request.getTitle(), request.getArtworkUrl()
         ));
