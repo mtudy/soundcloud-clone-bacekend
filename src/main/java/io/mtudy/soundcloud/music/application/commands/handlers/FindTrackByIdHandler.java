@@ -12,7 +12,7 @@ public class FindTrackByIdHandler {
         this.repository = repository;
     }
 
-    public Track run(String id) {
+    public Track handle(String id) {
         return this.repository.findById(id).orElseThrow();
     }
 }

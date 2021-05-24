@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
-public final class CreatePlaylistInput {
+public final class CreatePlaylistCommand {
     @NotBlank
     private String title;
 
